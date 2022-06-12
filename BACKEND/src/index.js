@@ -13,16 +13,25 @@ const server = http.createServer(( req, res )=>{
                     'Authorization': `token ${process.env.API_KEY}`
                 }  
             } ).then( r => {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+                res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
                 res.writeHead(200, {'Content-Type':'application/json'} );
                 res.write(JSON.stringify( r.data ));
                 res.end();
             })
         }catch( e ){
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+            res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
             res.writeHead(200, {'Content-Type':'application/json'} );
             res.write(JSON.stringify([{}]));
             res.end();
         }
     }else{
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+        res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
         res.writeHead(404, {'Content-Type':'application/json'} );
         res.write(JSON.stringify([{}]));
         res.end();
