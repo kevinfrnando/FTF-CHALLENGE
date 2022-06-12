@@ -17,21 +17,31 @@ code {
 
 .profile-image{
   margin-left: 0;
+  height: 50%;
+  border-radius: 50%;
+  border: #383838 1px solid;
 }
 
+.profile-bio{
+  text-align: left;
+}
 
 .section{
-  margin: 50px 0 0 0;
+  margin: 40px 10px;
   justify-content: center!important;
   display: flex;
-  overflow-y: scroll;
   padding: 25px;
+  border-radius: 25px;
+  border: #383838 1px solid;
 }
 .container{
+  padding: 25px;
   background-color: rgba(255, 254, 254, 0.048)!important;
   border-radius: 25px;
-  height: 75vh;
+  height: 80vh;
   margin: auto;
+  overflow-y: scroll;
+
 }
 
 .col{
@@ -42,6 +52,7 @@ code {
   height: 100%!important;
   position:relative!important;
   overflow-y: scroll;
+
 }
 .commit-card{
   border: white 1px solid!important;

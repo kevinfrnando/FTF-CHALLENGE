@@ -10,42 +10,44 @@ function Home(){
     const [ user, setUser ] = useState( {} );
 
     useEffect( () => {
+        const getUserData = async () =>{
+            const res = await axios.get('http://localhost:1337/user')
+                .then( f => {
+                    if( f.status === 200 ){
+                        return f.data ;   
+                    }else{
+                        return {}
+                    }
+                } )
+                .catch( e => {
+                    console.log(`Get user data failed. ${e}`);
+                    return {};
+                });
+            setUser( res );
+        }
+    
+        const getCommits = async () =>{
+            const res = await axios.get("http://localhost:1337/repo")
+                .then( f =>{
+                    if( f.status === 200 ){
+                        return f.data ;   
+                    }else{
+                        return []
+                    }
+                }).catch( e => {
+                    console.log(`Get commits data failed. ${e}`);
+                    return [];
+                });
+            setCommits( res );
+        }
+
         getUserData();
         getCommits();
     }, [])
 
 
 
-    const getUserData = async () =>{
-        const res = await axios.get('http://localhost:1337/user')
-            .then( f => {
-                if( f.status === 200 ){
-                    return f.data ;   
-                }else{
-                    return {}
-                }
-            } )
-            .catch( e => {
-                console.log(`Get user data failed. ${e}`);
-                return {};
-            });
-            setUser( res );
-    }
-
-    const getCommits = async () =>{
-        const res = await axios.get("http://localhost:1337/repo")
-            .then( f =>{
-                if( f.status === 200 ){
-                    return f.data ;   
-                }else{
-                    return []
-                }
-            }).catch( e => {
-                console.log(`Get commits data failed. ${e}`);
-                return [];
-            });
-            setCommits( res );
-    }
+    
 
     return(
         <>
@@ -54,7 +56,7 @@ function Home(){
                     <Col className="col"> 
                         <Profile user ={ user }/>
                     </Col>
-                    <Col xs={8} className="col">
+                    <Col className="col">
                         <Commits commits={ commits }/>
                     </Col>
                 </Row>
