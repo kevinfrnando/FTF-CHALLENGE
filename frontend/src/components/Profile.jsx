@@ -15,7 +15,7 @@ function Profile( props ){
             <div className="profile-bio">
                 <b>Bio: </b>{ user.bio }<br/>
                 <b>Location: </b>{ user.location }<br/>
-                <b>GitHub User since: </b>{user.created_at}<br/>
+                <b>GitHub User since: </b>{new Date( user.created_at ).toLocaleDateString("en-US")}<br/>
                 <b>Public Repos: </b>{ user.public_repos }<br/>
                 <b>Total Repos: </b>{ user.total_private_repos }<br/>
             </div>
