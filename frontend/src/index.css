@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black!important;
+  color: white!important;
+  text-align: center!important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.profile-image{
+  margin-left: 0;
+}
+
+
+.section{
+  margin: 50px 0 0 0;
+  justify-content: center!important;
+  display: flex;
+  overflow-y: scroll;
+  padding: 25px;
+}
+.container{
+  background-color: rgba(255, 254, 254, 0.048)!important;
+  border-radius: 25px;
+  height: 75vh;
+  margin: auto;
+}
+
+.col{
+  height: 95%!important;
+  overflow:hidden!important;
+}
+.commits-container{
+  height: 100%!important;
+  position:relative!important;
+  overflow-y: scroll;
+}
+.commit-card{
+  border: white 1px solid!important;
+  color: white;
+  text-align: left;
+  margin: 25px;
+  background-color:#383838!important;
+}
+
