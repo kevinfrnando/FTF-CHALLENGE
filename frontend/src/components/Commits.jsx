@@ -14,7 +14,7 @@ function Commits( props ){
                             <Card.Body>
                                 <Card.Title> { e.commit.message }</Card.Title>
                                 <Card.Text>
-                                    <b>Author: </b><a href={e?.author?.url} target="_blank">{ e?.commit?.author?.name}</a><br/>
+                                    <b>Author: </b><a href={e?.author?.url} target="_blank" rel="noreferrer">{ e?.commit?.author?.name}</a><br/>
                                     <b>Email: </b>{ e?.commit?.author?.email}<br/>
                                 </Card.Text>
                             </Card.Body>

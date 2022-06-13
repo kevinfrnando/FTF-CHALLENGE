@@ -5,7 +5,7 @@ function Profile( props ){
 
     return(
         <>
-            <a href="https://www.kevinvergara.com" target="_blank">
+            <a href="https://www.kevinvergara.com" target="_blank" rel="noreferrer">
                 <Image 
                     className="profile-image" 
                     src="https://avatars.githubusercontent.com/u/37157835?v=4"/>
@@ -21,12 +21,12 @@ function Profile( props ){
             </div>
             <Row className="justify-content-md-center">
                 <Col xs lg="2">
-                    <a href={user.html_url} target="_blank">
+                    <a href={user.html_url} target="_blank" rel="noreferrer">
                         <AiFillGithub size="40"/>
                     </a>
                 </Col>
                 <Col xs lg="2"> 
-                    <a href={`https://twitter.com/${user.twitter_username}`} target="_blank">
+                    <a href={`https://twitter.com/${user.twitter_username}`} target="_blank" rel="noreferrer">
                         <AiFillTwitterCircle size="40"/>
                     </a>
                 </Col>
